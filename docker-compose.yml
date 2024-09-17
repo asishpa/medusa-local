@@ -7,10 +7,10 @@ services:
       dockerfile: Dockerfile
     container_name: medusa_server
     environment:
-      DATABASE_URL: postgres://postgres:admin321@host.docker.internal:5432/medusa-store  # Pointing to local PostgreSQL
-      NODE_ENV: development
-      JWT_SECRET: your_jwt_secret
-      COOKIE_SECRET: your_cookie_secret
+      DATABASE_URL: ${DATABASE_URL}  # Load from system environment
+      NODE_ENV: development          # Load from system environment
+      JWT_SECRET: ${JWT_SECRET}      # Load from system environment
+      COOKIE_SECRET: ${COOKIE_SECRET} # Load from system environment
     ports:
       - "9000:9000"
     volumes:
