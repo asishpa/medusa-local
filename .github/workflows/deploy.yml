@@ -15,7 +15,7 @@ jobs:
 
       - name: Build and deploy Docker containers
         run: |
-          cd /home/ubuntu/your-repo
+          cd /home/ubuntu/medusa-local
           git pull origin main
           docker-compose down
           docker-compose up -d --build
