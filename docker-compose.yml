@@ -1,4 +1,4 @@
-version: '3.8'
+version: '3.3'  # You can downgrade from '3.8' to '3.3' if necessary.
 
 services:
   medusa:
@@ -7,10 +7,10 @@ services:
       dockerfile: Dockerfile
     container_name: medusa_server
     environment:
-      DATABASE_URL: ${DATABASE_URL}  # Load from system environment
-      NODE_ENV: development          # Load from system environment
-      JWT_SECRET: ${JWT_SECRET}      # Load from system environment
-      COOKIE_SECRET: ${COOKIE_SECRET} # Load from system environment
+      - DATABASE_URL=${DATABASE_URL}     # From environment variables or .env file
+      - NODE_ENV=${NODE_ENV}
+      - JWT_SECRET=${JWT_SECRET}
+      - COOKIE_SECRET=${COOKIE_SECRET}
     ports:
       - "9000:9000"
     volumes:
