@@ -1,4 +1,4 @@
-version: '3.3'  # You can downgrade from '3.8' to '3.3' if necessary.
+version: '3.3'
 
 services:
   medusa:
